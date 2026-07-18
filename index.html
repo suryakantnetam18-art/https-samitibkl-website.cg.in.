@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>आदिम जाति सेवा सहकारी समिति मर्यादित बाकुलवाही</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <!-- Google Fonts for Hindi -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Devanagari:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Noto Sans Devanagari', sans-serif; scroll-behavior: smooth; }
+        .custom-logo {
+            width: 70px; height: 70px; border-radius: 50%; background: white; position: relative;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.15); display: flex; align-items: center; justify-content: center; overflow: hidden; border: 2px solid #064e3b;
+        }
+        .logo-sun { width: 26px; height: 26px; background: #f59e0b; border-radius: 50%; position: absolute; top: 14px; left: 18px; z-index: 1; }
+        .logo-field-green { width: 75px; height: 75px; background: #15803d; border-radius: 50%; position: absolute; bottom: -32px; right: -10px; transform: rotate(-25deg); }
+        .logo-field-light { width: 55px; height: 55px; background: #4ade80; border-radius: 50%; position: absolute; bottom: -22px; left: 2px; transform: rotate(-10deg); }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-800" onload="loadAllOfficeData()">
+
+    <!-- TOP HEADER BAR -->
+    <div class="bg-emerald-900 text-emerald-100 py-2 px-4 text-sm hidden md:block">
+        <div class="container mx-auto flex justify-between items-center">
+            <div class="flex items-center space-x-6">
+                <span><i class="fa-solid fa-location-dot text-amber-400 mr-2"></i> ग्राम-कोचवाही, नारायणपुर (छ.ग.)</span>
+                <span><i class="fa-solid fa-phone text-amber-400 mr-2"></i> प्रबंधक: +91 9407740808</span>
+            </div>
+            <div class="flex items-center space-x-4">
+                <span class="bg-emerald-800 text-emerald-200 px-3 py-1 rounded text-xs font-bold">पंजीयन क्र: 26 (दिनांक: 20-11-2020)</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- MAIN NAV HEADER -->
+    <header class="bg-white border-b border-slate-200 sticky top-0 z-50 shadow-sm">
+        <div class="container mx-auto px-4 py-3 flex flex-col lg:flex-row justify-between items-center">
+            <div class="flex items-center space-x-4 mb-4 lg:mb-0">
+                <div class="custom-logo shrink-0"><div class="logo-sun"></div><div class="logo-field-light"></div><div class="logo-field-green"></div></div>
+                <div>
+                    <h1 class="text-xl md:text-2xl font-extrabold text-emerald-800 tracking-tight leading-tight">आदिम जाति सेवा सहकारी समिति मर्यादित बाकुलवाही</h1>
+                    <p class="text-xs md:text-sm font-semibold text-slate-500 mt-1"><span class="bg-emerald-100 text-emerald-800 text-[10px] uppercase px-2 py-0.5 rounded font-bold mr-2">पंजीकृत संस्था: 26</span> जिला: नारायणपुर (छत्तीसगढ़)</p>
+                </div>
+            </div>
+            <nav class="flex flex-wrap justify-center items-center gap-1 md:gap-3 text-sm font-bold text-slate-600">
+                <a href="#home" class="hover:text-emerald-700 px-3 py-2 rounded-md hover:bg-slate-100 transition">मुख्य पृष्ठ</a>
+                <a href="#notice-board" class="hover:text-emerald-700 px-3 py-2 rounded-md hover:bg-slate-100 transition">सूचना पटल</a>
+                <a href="#paddy" class="hover:text-emerald-700 px-3 py-2 rounded-md hover:bg-slate-100 transition">धान खरीदी</a>
+                <a href="#stock" class="hover:text-emerald-700 px-3 py-2 rounded-md hover:bg-slate-100 transition">स्टॉक स्थिति</a>
+                <button onclick="openLoginModal()" class="ml-2 bg-slate-800 hover:bg-slate-900 text-white px-4 py-2 rounded-xl flex items-center shadow transition text-xs md:text-sm">
+                    <i class="fa-solid fa-lock mr-2 text-amber-400"></i> ऑफिस लॉगिन
+                </button>
+            </nav>
+        </div>
+    </header>
+
+    <!-- 🌟 MASTER OFFICE DASHBOARD -->
+    <section id="office-dashboard" class="hidden py-12 bg-emerald-50 border-b-4 border-emerald-600">
+        <div class="container mx-auto px-4 max-w-5xl">
+            <div class="bg-white rounded-2xl p-6 shadow-xl border border-emerald-200">
+                <div class="flex justify-between items-center border-b pb-4 mb-6">
+                    <div class="flex items-center space-x-3">
+                        <div class="bg-emerald-800 text-white p-2.5 rounded-lg text-xl"><i class="fa-solid fa-laptop-file"></i></div>
+                        <div>
+                            <h3 class="text-xl md:text-2xl font-black text-slate-800">समिति मास्टर ऑफिस मैनेजमेंट डैशबोर्ड</h3>
+                            <p class="text-xs text-emerald-700 font-bold">यहाँ से सीधे पीडीएफ अपलोड करें और वेबसाइट डेटा बदलें</p>
+                        </div>
+                    </div>
+                    <button onclick="logoutOffice()" class="bg-red-600 hover:bg-red-700 text-white font-bold px-4 py-2 rounded-lg text-xs shadow"><i class="fa-solid fa-power-off mr-2"></i> लॉग आउट</button>
+                </div>
+
+                <div class="grid md:grid-cols-2 gap-6">
+                    <!-- 📁 1. डायरेक्ट पीडीएफ अपलोड कंट्रोल -->
+                    <div class="bg-slate-50 border border-emerald-200 p-4 rounded-xl shadow-sm space-y-3">
+                        <h4 class="font-bold text-slate-800 flex items-center text-sm text-emerald-800"><i class="fa-solid fa-file-pdf mr-2"></i> 1. डायरेक्ट PDF नोटिस अपलोड करें</h4>
+                        <div>
+                            <label class="block text-xs font-bold text-slate-600 mb-1">नोटिस का नाम (शीर्षक):</label>
+                            <input type="text" id="dash-notice-title" class="w-full border p-2 text-xs rounded-lg" placeholder="उदा: धान खरीदी नियम 2026">
+                        </div>
+                        <div>
+                            <label class="block text-xs font-bold text-slate-600 mb-1">कंप्यूटर/मोबाइल से PDF चुनें:</label>
+                            <input type="file" id="dash-notice-file" accept="application/pdf" class="w-full bg-white border p-1.5 text-xs rounded-lg cursor-pointer">
+                            <p class="text-[10px] text-slate-500 mt-1">⚠️ नोट: फाइल का साइज छोटा रखें (1MB से कम) ताकि आसानी से लोड हो सके।</p>
+                        </div>
+                    </div>
+
+                    <!-- 2. धान खरीदी आंकड़े कंट्रोल -->
+                    <div class="bg-slate-50 border p-4 rounded-xl shadow-sm space-y-2">
+                        <h4 class="font-bold text-slate-800 flex items-center text-sm text-blue-800"><i class="fa-solid fa-calculator mr-2"></i> 2. धान खरीदी लाइव आंकड़े</h4>
+                        <div>
+                            <label class="block text-xs font-bold text-slate-600 mb-1">कुल आवक (क्विंटल):</label>
+                            <input type="text" id="dash-paddy-total" class="w-full border p-2 text-xs rounded-lg" placeholder="कुल आवक">
+                        </div>
+                        <div>
+                            <label class="block text-xs font-bold text-slate-600 mb-1">कुल जारी टोकन:</label>
+                            <input type="text" id="dash-paddy-token" class="w-full border p-2 text-xs rounded-lg" placeholder="कुल जारी टोकन">
+                        </div>
+                    </div>
+
+                    <!-- ➕ 3. नया खाद या बीज जोड़ने का फॉर्म -->
+                    <div class="bg-slate-50 border p-4 rounded-xl shadow-sm md:col-span-2">
+                        <h4 class="font-bold text-slate-800 mb-3 flex items-center text-sm text-indigo-800"><i class="fa-solid fa-square-plus mr-2"></i> गोदाम में नया आइटम शामिल करें (खाद / बीज)</h4>
+                        <div class="grid grid-cols-1 sm:grid-cols-4 gap-3 text-xs">
+                            <div class="flex items-center gap-3 sm:pt-6">
+                                <label class="font-bold text-slate-700"><input type="radio" name="itemType" value="khad" checked class="mr-1 accent-emerald-700"> खाद</label>
+                                <label class="font-bold text-slate-700"><input type="radio" name="itemType" value="beej" class="mr-1 accent-amber-700"> बीज</label>
+                            </div>
+                            <input type="text" id="new-item-name" class="border p-2 rounded-lg" placeholder="नाम">
+                            <input type="text" id="new-item-weight" class="border p-2 rounded-lg" placeholder="वजन">
+                            <div class="flex gap-2">
+                                <input type="text" id="new-item-price" class="border p-2 rounded-lg flex-1" placeholder="दर (₹)">
+                                <button onclick="addNewItem()" class="bg-indigo-700 text-white font-bold px-3 rounded-lg"><i class="fa-solid fa-plus"></i></button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 4. लाइव स्टॉक मात्रा अपडेट एरिया -->
+                    <div class="bg-slate-50 border p-4 rounded-xl shadow-sm md:col-span-2">
+                        <h4 class="font-bold text-slate-800 mb-3 flex items-center text-sm text-amber-800"><i class="fa-solid fa-cubes mr-2"></i> सभी उपलब्ध स्टॉक मात्रा भरें</h4>
+                        <div id="dash-stock-inputs" class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-3 text-xs"></div>
+                    </div>
+                </div>
+
+                <!-- MASTER SAVE BUTTON -->
+                <button onclick="saveAllOfficeData()" class="w-full bg-emerald-800 hover:bg-emerald-900 text-white font-black text-sm py-3 rounded-xl mt-6 shadow-lg flex items-center justify-center gap-2">
+                    <i class="fa-solid fa-cloud-arrow-up text-lg text-amber-400"></i> 📢 पूरी वेबसाइट पर नया डेटा तुरंत लाइव करें
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- HERO SECTION -->
+    <section id="home" class="relative bg-emerald-950 text-white py-14 px-4 text-center">
+        <h2 class="text-2xl md:text-4xl font-black mb-2">किसानों, आदिवासियों एवं ग्रामीणों के आर्थिक उत्थान का मजबूत आधार</h2>
+        <p class="text-sm md:text-base text-emerald-100/90">ग्राम-कोचवाही, पोस्ट-बाकुलवाही समिति क्षेत्र (नारायणपुर)</p>
+    </section>
+
+    <!-- 📢 NOTICE BOARD -->
+    <section id="notice-board" class="py-10 bg-white border-b">
+        <div class="container mx-auto px-4 max-w-5xl">
+            <div class="bg-amber-50 border-l-4 border-amber-500 rounded-r-xl p-6 shadow-sm">
+                <div class="flex flex-col md:flex-row md:items-center md:justify-between border-b pb-4 mb-4 gap-4">
+                    <div class="flex items-center space-x-3">
+                        <div class="bg-amber-500 text-white p-2.5 rounded-lg animate-pulse"><i class="fa-solid fa-bullhorn"></i></div>
+                        <div>
+                            <h3 class="text-lg font-extrabold text-amber-900">किसान विशेष सूचना पटल (Notice Board)</h3>
+                            <p class="text-xs text-amber-700">समिति द्वारा जारी की गई नवीनतम घोषणाएं</p>
+                        </div>
+                    </div>
+                    <a href="https://chat.whatsapp.com/JQbGyJI88C0HuZCRmw4KbY" target="_blank" class="inline-flex items-center bg-[#25D366] text-white font-extrabold px-4 py-2 rounded-xl text-xs shadow"><i class="fa-brands fa-whatsapp text-lg mr-2"></i> समिति किसान ग्रुप से जुड़ें</a>
+                </div>
+                
+                <!-- लाइव बदलने वाला PDF नोटिस ब्लॉक -->
+                <div class="bg-white p-4 rounded-lg border border-amber-100 shadow-sm flex flex-col md:flex-row md:items-center justify-between gap-3">
+                    <div class="flex items-start space-x-3">
+                        <span class="bg-emerald-100 text-emerald-800 text-xs font-bold px-2 py-0.5 rounded mt-0.5">नया नोटिस</span>
+                        <div>
+                            <h4 id="web-notice-title" class="font-bold text-slate-800 text-sm md:text-base">नवीनतम आदेश एवं वितरण संबंधी दिशानिर्देश</h4>
+                            <p class="text-slate-600 text-xs mt-0.5">समिति द्वारा अपलोड किया गया नया आदेश सीधे देखने के लिए सामने दिए बटन को दबाएं।</p>
+                        </div>
+                    </div>
+                    <!-- 🛠️ बदलाव: अब यह बटन डायरेक्ट इन-बिल्ट पॉपअप ओपन करेगा बिना एरर के -->
+                    <button onclick="viewPdfNotice()" class="inline-flex items-center bg-emerald-700 hover:bg-emerald-800 text-white font-bold px-5 py-2.5 rounded-xl text-xs shadow transition shrink-0">
+                        <i class="fa-solid fa-eye mr-2 text-sm"></i> नोटिस PDF देखें
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 🌾 धान खरीदी आंकड़े -->
+    <section id="paddy" class="py-12 bg-slate-50 border-b">
+        <div class="container mx-auto px-4 max-w-5xl">
+            <div class="text-center mb-8"><h3 class="text-xl md:text-2xl font-extrabold text-slate-800">धान खरीदी एवं उपार्जन प्रगति रिपोर्ट</h3></div>
+            <div class="grid grid-cols-2 gap-4 max-w-xl mx-auto">
+                <div class="bg-white p-4 border rounded-xl text-center shadow-sm">
+                    <p class="text-xs font-bold text-slate-500 uppercase">कुल आवक अब तक</p>
+                    <p id="web-paddy-total" class="text-xl font-black text-emerald-800 mt-1">- क्विंटल</p>
+                </div>
+                <div class="bg-white p-4 border rounded-xl text-center shadow-sm">
+                    <p class="text-xs font-bold text-slate-500 uppercase">कुल जारी टोकन</p>
+                    <p id="web-paddy-token" class="text-xl font-black text-blue-800 mt-1">- टोकन</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 📊 लाइव खाद-बीज स्टॉक तालिकाएं -->
+    <section id="stock" class="py-12 bg-white">
+        <div class="container mx-auto px-4 max-w-5xl">
+            <div class="text-center mb-8"><h3 class="text-xl md:text-2xl font-extrabold text-slate-800">आज का खाद-बीज स्टॉक स्थिति एवं शासकीय दर</h3></div>
+            <div class="grid lg:grid-cols-2 gap-8">
+                <div class="bg-white rounded-2xl shadow-md border overflow-hidden">
+                    <div class="bg-emerald-800 text-white p-4 font-bold text-sm">🍃 खाद विवरण</div>
+                    <table class="w-full text-left border-collapse text-xs md:text-sm">
+                        <thead><tr class="bg-slate-100 font-bold border-b"><th class="p-3">नाम</th><th class="p-3 text-center">वजन</th><th class="p-3 text-center">शासकीय दर</th><th class="p-3 text-center">स्टॉक स्थिति</th></tr></thead>
+                        <tbody id="web-khad-tbody" class="divide-y font-medium"></tbody>
+                    </table>
+                </div>
+                <div class="bg-white rounded-2xl shadow-md border overflow-hidden">
+                    <div class="bg-amber-700 text-white p-4 font-bold text-sm">🌾 उन्नत बीज विवरण</div>
+                    <table class="w-full text-left border-collapse text-xs md:text-sm">
+                        <thead><tr class="bg-slate-100 font-bold border-b"><th class="p-3">किस्म</th><th class="p-3 text-center">वजन</th><th class="p-3 text-center">शासकीय दर</th><th class="p-3 text-center">स्टॉक स्थिति</th></tr></thead>
+                        <tbody id="web-beej-tbody" class="divide-y font-medium"></tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 🖥️ इन-बिल्ट एडवांस PDF व्यूअर पॉपअप (New Feature Added) -->
+    <div id="pdfModal" class="fixed inset-0 bg-black/80 z-[200] flex items-center justify-center p-2 md:p-4 hidden">
+        <div class="bg-white rounded-2xl w-full max-w-4xl h-[90vh] flex flex-col overflow-hidden shadow-2xl border">
+            <div class="bg-emerald-800 text-white p-4 flex justify-between items-center shadow">
+                <h4 id="modal-pdf-title" class="font-bold text-sm md:text-base truncate mr-4">सूचना पटल नोटिस</h4>
+                <button onclick="closePdfModal()" class="bg-emerald-900 hover:bg-red-600 px-3 py-1 rounded-lg text-xs font-bold tracking-wider transition"><i class="fa-solid fa-xmark mr-1"></i> बंद करें</button>
+            </div>
+            <div class="flex-1 bg-slate-100 p-1 relative">
+                <!-- आईफ्रेम जो सुरक्षित तरीके से पीडीएफ लोड करेगा -->
+                <iframe id="pdfFrame" class="w-full h-full rounded-xl border" src=""></iframe>
+                <div id="pdf-fallback-msg" class="absolute inset-0 flex flex-col items-center justify-center bg-white p-4 text-center hidden">
+                     <i class="fa-solid fa-file-pdf text-red-500 text-5xl mb-3"></i>
+                     <p class="font-bold text-slate-700 text-sm">आपके मोबाइल ब्राउज़र में डायरेक्ट प्रीव्यू सपोर्ट नहीं है।</p>
+                     <a id="pdf-download-fallback" href="#" class="mt-3 bg-red-600 text-white text-xs font-bold px-4 py-2 rounded-lg shadow">यहाँ से डाउनलोड करके देखें</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- LOGIN MODAL POPUP -->
+    <div id="loginModal" class="fixed inset-0 bg-black/60 z-[100] flex items-center justify-center p-4 hidden">
+        <div class="bg-white rounded-2xl w-full max-w-sm overflow-hidden shadow-2xl border">
+            <div class="bg-slate-800 text-white p-4 text-center"><h4 class="font-black">समिति कार्यालय लॉगिन पैनल</h4></div>
+            <div class="p-6 space-y-4">
+                <div id="login-error" class="hidden text-xs bg-red-50 text-red-700 p-2 rounded">❌ गलत आईडी या पासवर्ड!</div>
+                <input type="text" id="username" class="w-full border p-2 text-sm rounded-lg" placeholder="यूज़र आईडी (User ID)">
+                <input type="password" id="password" class="w-full border p-2 text-sm rounded-lg" placeholder="पासवर्ड (Password)">
+                <button onclick="checkOfficeLogin()" class="w-full bg-emerald-700 text-white font-bold py-2 rounded-lg text-sm">प्रवेश करें</button>
+                <button onclick="closeLoginModal()" class="w-full text-xs text-slate-400 text-center block mt-1">बंद करें</button>
+            </div>
+        </div>
+    </div>
+
+    <footer class="bg-slate-900 text-slate-500 py-4 text-center text-xs"><p>© 2026 आदिम जाति सेवा सहकारी समिति बाकुलवाही।</p></footer>
+
+    <!-- 🛠️ JAVASCRIPT SYSTEM -->
+    <script>
+        function openLoginModal() { document.getElementById('loginModal').classList.remove('hidden'); }
+        function closeLoginModal() { document.getElementById('loginModal').classList.add('hidden'); }
+        
+        function checkOfficeLogin() {
+            var u = document.getElementById('username').value;
+            var p = document.getElementById('password').value;
+            if(u === "BKL26" && p === "Lamps@123") {
+                document.getElementById('loginModal').classList.add('hidden');
+                document.getElementById('office-dashboard').classList.remove('hidden');
+                document.getElementById('office-dashboard').scrollIntoView({ behavior: 'smooth' });
+            } else { document.getElementById('login-error').classList.remove('hidden'); }
+        }
+        function logoutOffice() { document.getElementById('office-dashboard').classList.add('hidden'); window.scrollTo({top: 0, behavior: 'smooth'}); }
+
+        // PDF पॉपअप खोलने और देखने का आधुनिक सिस्टम
+        function viewPdfNotice() {
+            var pdfData = localStorage.getItem('bakul_pdf_base64');
+            var pdfTitle = localStorage.getItem('bakul_pdf_title') || "नवीनतम आदेश एवं वितरण संबंधी दिशानिर्देश";
+            
+            if(!pdfData || pdfData === "#") {
+                alert("⚠️ अभी समिति द्वारा कोई भी PDF फाइल अपलोड नहीं की गई है!");
+                return;
+            }
+
+            document.getElementById('modal-pdf-title').innerText = pdfTitle;
+            document.getElementById('pdfModal').classList.remove('hidden');
+            
+            // मोबाइल कम्पैटिबिलिटी चेक
+            var iframe = document.getElementById('pdfFrame');
+            var fallback = document.getElementById('pdf-fallback-msg');
+            
+            iframe.src = pdfData;
+            iframe.classList.remove('hidden');
+            fallback.classList.add('hidden');
+
+            // कुछ पुराने मोबाइल्स के लिए अल्टरनेट डाउनलोड लिंक भी सेट कर देते हैं
+            document.getElementById('pdf-download-fallback').href = pdfData;
+            document.getElementById('pdf-download-fallback').download = pdfTitle + ".pdf";
+        }
+
+        function closePdfModal() {
+            document.getElementById('pdfModal').classList.add('hidden');
+            document.getElementById('pdfFrame').src = "";
+        }
+
+        var defaultKhad = [
+            { id: "uriya", name: "यूरिया (URIYA)", weight: "45 KG", price: "₹ 266.50", stock: "250 बोरी" },
+            { id: "dap", name: "डी.ए.पी. (DAP)", weight: "50 KG", price: "₹ 1350.00", stock: "सीमित स्टॉक" },
+            { id: "ssp", name: "एस.एस.पी. (SSP)", weight: "50 KG", price: "₹ 695.00", stock: "उपलब्ध" },
+            { id: "potash", name: "पोटाश (POTASH)", weight: "50 KG", price: "₹ 1975.00", stock: "उपलब्ध" },
+            { id: "naino", name: "नैनो डी.ए.पी. (NAINO DAP)", weight: "600 LIT.", price: "₹ 600.00", stock: "180 बॉटल" },
+            { id: "npk", name: "एन.पी.के. (NPK)", weight: "50 KG", price: "₹ 1300.00", stock: "उपलब्ध" }
+        ];
+
+        var defaultBeej = [
+            { id: "mtu1010", name: "MTU 1010", weight: "30 KG", price: "₹ 1185.00", stock: "50 बोरी" },
+            { id: "mtu1153", name: "MTU 1153", weight: "30 KG", price: "₹ 1185.00", stock: "उपलब्ध" },
+            { id: "ir64", name: "IR64", weight: "30 KG", price: "₹ 1185.00", stock: "उपलब्ध" }
+        ];
+
+        function addNewItem() {
+            var type = document.querySelector('input[name="itemType"]:checked').value;
+            var name = document.getElementById('new-item-name').value.trim();
+            var weight = document.getElementById('new-item-weight').value.trim();
+            var price = document.getElementById('new-item-price').value.trim();
+
+            if(!name || !weight || !price) { alert('कृपया सभी विवरण भरें!'); return; }
+            var cleanId = "custom_" + Date.now();
+            var newItem = { id: cleanId, name: name, weight: weight, price: "₹ " + price.replace('₹',''), stock: "उपलब्ध" };
+
+            if(type === 'khad') {
+                var list = JSON.parse(localStorage.getItem('bakul_khad_list')) || defaultKhad;
+                list.push(newItem); localStorage.setItem('bakul_khad_list', JSON.stringify(list));
+            } else {
+                var list = JSON.parse(localStorage.getItem('bakul_beej_list')) || defaultBeej;
+                list.push(newItem); localStorage.setItem('bakul_beej_list', JSON.stringify(list));
+            }
+            document.getElementById('new-item-name').value = ""; document.getElementById('new-item-weight').value = ""; document.getElementById('new-item-price').value = "";
+            renderDashboardInputs(); alert('🎉 सूची में नया आइटम जोड़ा गया!');
+        }
+
+        function renderDashboardInputs() {
+            var khadList = JSON.parse(localStorage.getItem('bakul_khad_list')) || defaultKhad;
+            var beejList = JSON.parse(localStorage.getItem('bakul_beej_list')) || defaultBeej;
+            var container = document.getElementById('dash-stock-inputs'); container.innerHTML = "";
+
+            khadList.forEach(item => {
+                var savedStock = localStorage.getItem('bakul_stk_' + item.id) || item.stock;
+                container.innerHTML += `<div><label class="font-bold text-emerald-800">🍃 ${item.name}</label><input type="text" id="inp-${item.id}" value="${savedStock}" class="w-full border p-2 rounded mt-0.5"></div>`;
+            });
+            beejList.forEach(item => {
+                var savedStock = localStorage.getItem('bakul_stk_' + item.id) || item.stock;
+                container.innerHTML += `<div><label class="font-bold text-amber-800">🌾 ${item.name}</label><input type="text" id="inp-${item.id}" value="${savedStock}" class="w-full border p-2 rounded mt-0.5"></div>`;
+            });
+        }
+
+        function saveAllOfficeData() {
+            localStorage.setItem('bakul_pdf_title', document.getElementById('dash-notice-title').value);
+            localStorage.setItem('bakul_paddy_tot', document.getElementById('dash-paddy-total').value);
+            localStorage.setItem('bakul_paddy_tok', document.getElementById('dash-paddy-token').value);
+            
+            var khadList = JSON.parse(localStorage.getItem('bakul_khad_list')) || defaultKhad;
+            var beejList = JSON.parse(localStorage.getItem('bakul_beej_list')) || defaultBeej;
+            khadList.concat(beejList).forEach(item => {
+                var element = document.getElementById('inp-' + item.id);
+                if(element) { localStorage.setItem('bakul_stk_' + item.id, element.value); }
+            });
+
+            var fileInput = document.getElementById('dash-notice-file');
+            if (fileInput.files.length > 0) {
+                var file = fileInput.files[0];
+                var reader = new FileReader();
+                reader.onload = function(e) {
+                    try {
+                        localStorage.setItem('bakul_pdf_base64', e.target.result);
+                        finalizeSave();
+                    } catch (error) {
+                        alert('⚠️ पीडीएफ फाइल का साइज बड़ा है! कृपया 1MB से कम की फाइल अपलोड करें।');
+                    }
+                };
+                reader.readAsDataURL(file);
+            } else {
+                finalizeSave();
+            }
+        }
+
+        function finalizeSave() {
+            loadAllOfficeData();
+            alert('🎉 बधाई हो! पूरा डेटा और पीडीएफ लाइव वेबसाइट पर अपडेट हो गया है।');
+        }
+
+        function loadAllOfficeData() {
+            var pdfT = localStorage.getItem('bakul_pdf_title') || "नवीनतम आदेश एवं वितरण संबंधी दिशानिर्देश";
+            document.getElementById('web-notice-title').innerText = pdfT;
+            document.getElementById('dash-notice-title').value = pdfT;
+
+            var padTot = localStorage.getItem('bakul_paddy_tot') || "45,230";
+            var padTok = localStorage.getItem('bakul_paddy_tok') || "1,245";
+            document.getElementById('web-paddy-total').innerText = padTot + " क्विंटल";
+            document.getElementById('web-paddy-token').innerText = padTok + " टोकन";
+            document.getElementById('dash-paddy-total').value = padTot;
+            document.getElementById('dash-paddy-token').value = padTok;
+
+            var khadList = JSON.parse(localStorage.getItem('bakul_khad_list')) || defaultKhad;
+            var beejList = JSON.parse(localStorage.getItem('bakul_beej_list')) || defaultBeej;
+
+            var khadTbody = document.getElementById('web-khad-tbody'); khadTbody.innerHTML = "";
+            khadList.forEach(item => {
+                var stockVal = localStorage.getItem('bakul_stk_' + item.id) || item.stock;
+                khadTbody.innerHTML += `<tr><td class="p-3 font-bold text-slate-800">${item.name}</td><td class="p-3 text-center">${item.weight}</td><td class="p-3 text-center text-emerald-700 font-bold">${item.price}</td><td class="p-3 text-center text-amber-700 font-bold">${stockVal}</td></tr>`;
+            });
+
+            var beejTbody = document.getElementById('web-beej-tbody'); beejTbody.innerHTML = "";
+            beejList.forEach(item => {
+                var stockVal = localStorage.getItem('bakul_stk_' + item.id) || item.stock;
+                beejTbody.innerHTML += `<tr><td class="p-3 font-bold text-slate-800">${item.name}</td><td class="p-3 text-center">${item.weight}</td><td class="p-3 text-center text-amber-700 font-bold">${item.price}</td><td class="p-3 text-center text-emerald-700 font-bold">${stockVal}</td></tr>`;
+            });
+            renderDashboardInputs();
+        }
+    </script>
+</body>
+</html>
